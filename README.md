@@ -14,3 +14,7 @@ setup `.env`
 `pnpx hardhat run scripts/<script_name>.ts --network <network>`
 
 see hardhat.config.ts for networks
+
+## Tests
+
+`pnpm run test`
