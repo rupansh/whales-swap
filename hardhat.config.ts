@@ -10,6 +10,10 @@ export default {
         auto: false,
         interval: 4000,
       },
+    },
+    bsc_testnet: {
+      url: "https://data-seed-prebsc-1-s2.binance.org:8545",
+      accounts: [process.env.SIGNER],
     }
   },
 };
