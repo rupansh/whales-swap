@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ethersproject/abi': ^5.5.0
   '@ethersproject/bytes': ^5.5.0
+  '@ethersproject/contracts': ^5.5.0
   '@ethersproject/providers': ^5.5.1
   '@nomiclabs/hardhat-ethers': ^2.0.3
   '@nomiclabs/hardhat-waffle': ^2.0.1
@@ -10,14 +11,16 @@ specifiers:
   '@openzeppelin/test-environment': ^0.1.9
   '@openzeppelin/test-helpers': ^0.5.15
   '@typechain/ethers-v5': ^8.0.5
+  '@typechain/hardhat': ^3.0.0
   '@types/chai': ^4.3.0
   '@types/mocha': ^9.0.0
   '@types/node': ^17.0.1
-  bn.js: ^5.2.0
+  bn.js: 4.11.0
   chai: ^4.3.4
   ethereum-waffle: ^3.4.0
   ethers: ^5.5.2
   hardhat: ^2.8.0
+  lodash: ^4.17.21
   mocha: ^9.1.3
   solc: ^0.8.7
   solhint: ^3.3.6
@@ -28,21 +31,24 @@ specifiers:
 devDependencies:
   '@ethersproject/abi': 5.5.0
   '@ethersproject/bytes': 5.5.0
+  '@ethersproject/contracts': 5.5.0
   '@ethersproject/providers': 5.5.1
   '@nomiclabs/hardhat-ethers': 2.0.3_ethers@5.5.2+hardhat@2.8.0
   '@nomiclabs/hardhat-waffle': 2.0.1_b5edb2070812aa32af4b3ffe4f4a52ce
   '@openzeppelin/contracts': 4.4.1
   '@openzeppelin/test-environment': 0.1.9
-  '@openzeppelin/test-helpers': 0.5.15_bn.js@5.2.0
+  '@openzeppelin/test-helpers': 0.5.15_bn.js@4.11.0
   '@typechain/ethers-v5': 8.0.5_a848fe645bd40ab7aaf263ae8b85b812
+  '@typechain/hardhat': 3.0.0_b35b6843e7a00a033ee2d75ece6846c7
   '@types/chai': 4.3.0
   '@types/mocha': 9.0.0
   '@types/node': 17.0.1
-  bn.js: 5.2.0
+  bn.js: 4.11.0
   chai: 4.3.4
   ethereum-waffle: 3.4.0_typescript@4.5.4
   ethers: 5.5.2
   hardhat: 2.8.0
+  lodash: 4.17.21
   mocha: 9.1.3
   solc: 0.8.10
   solhint: 3.3.6
@@ -683,14 +689,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@openzeppelin/test-helpers/0.5.15_bn.js@5.2.0:
+  /@openzeppelin/test-helpers/0.5.15_bn.js@4.11.0:
     resolution: {integrity: sha512-10fS0kyOjc/UObo9iEWPNbC6MCeiQ7z97LDOJBj68g+AAs5pIGEI2h3V6G9TYTIq8VxOdwMQbfjKrx7Y3YZJtA==}
     dependencies:
       '@openzeppelin/contract-loader': 0.6.3
       '@truffle/contract': 4.4.1
       ansi-colors: 3.2.4
       chai: 4.3.4
-      chai-bn: 0.2.2_bn.js@5.2.0+chai@4.3.4
+      chai-bn: 0.2.2_bn.js@4.11.0+chai@4.3.4
       ethjs-abi: 0.2.1
       lodash.flatten: 4.4.0
       semver: 5.7.1
@@ -1003,6 +1009,19 @@ packages:
       ts-essentials: 7.0.3_typescript@4.5.4
       typechain: 6.0.5_typescript@4.5.4
       typescript: 4.5.4
+    dev: true
+
+  /@typechain/hardhat/3.0.0_b35b6843e7a00a033ee2d75ece6846c7:
+    resolution: {integrity: sha512-FpnIIXkDXm54XCHI/Z2iOet7h1MrFSvZfuljX9Uzc6FEjEfb01Tuzu8ywe2iquD3g5JXqovgdv+M54L/2Z6jkg==}
+    peerDependencies:
+      hardhat: ^2.0.10
+      lodash: ^4.17.15
+      typechain: ^6.0.0
+    dependencies:
+      fs-extra: 9.1.0
+      hardhat: 2.8.0
+      lodash: 4.17.21
+      typechain: 6.0.5_typescript@4.5.4
     dev: true
 
   /@types/abstract-leveldown/5.0.2:
@@ -1498,7 +1517,7 @@ packages:
   /async/2.6.2:
     resolution: {integrity: sha512-H1qVYh1MYhEEFLsP97cVKqCGo7KfCyTt6uEWqsTBr9SO84oK9Uwbyd/yCW+6rKJLHksBNUVWZDAjfS+Ccx0Bbg==}
     dependencies:
-      lodash: 4.17.20
+      lodash: 4.17.21
     dev: true
 
   /async/2.6.3:
@@ -2099,6 +2118,10 @@ packages:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
     dev: true
 
+  /bn.js/4.11.0:
+    resolution: {integrity: sha1-6yR4Pg53qUNkD6OHCVsce09Q0UA=}
+    dev: true
+
   /bn.js/4.11.6:
     resolution: {integrity: sha1-UzRK2xRhehP26N0s4okF0cC6MhU=}
     dev: true
@@ -2438,13 +2461,13 @@ packages:
       lazy-cache: 1.0.4
     dev: true
 
-  /chai-bn/0.2.2_bn.js@5.2.0+chai@4.3.4:
+  /chai-bn/0.2.2_bn.js@4.11.0+chai@4.3.4:
     resolution: {integrity: sha512-MzjelH0p8vWn65QKmEq/DLBG1Hle4WeyqT79ANhXZhn/UxRWO0OogkAxi5oGGtfzwU9bZR8mvbvYdoqNVWQwFg==}
     peerDependencies:
       bn.js: ^4.11.0
       chai: ^4.0.0
     dependencies:
-      bn.js: 5.2.0
+      bn.js: 4.11.0
       chai: 4.3.4
     dev: true
 

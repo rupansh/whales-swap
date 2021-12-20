@@ -28,11 +28,12 @@ contract WhalesRewardNft is ERC721URIStorage, AccessControl {
     }
 
     /// @notice Mints a new reward NFT
+    /// @param to address of the nft receiver
     /// @param uri url of the NFT
     /// @dev increments `tokenId` BEFORE minting the nft. Requires caller to have the `MINTER` role.
-    function mint(string calldata uri) external onlyRole(MINTER) {
+    function mintFor(address to, string calldata uri) external onlyRole(MINTER) {
         tokenId += 1;
-        _safeMint(msg.sender, tokenId);
+        _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
     }
 
